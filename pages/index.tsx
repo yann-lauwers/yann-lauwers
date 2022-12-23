@@ -1,6 +1,23 @@
+"use client"
+
 import Head from "next/head"
+import { useEffect, useLayoutEffect, useRef, useState } from "react"
+
+const getDiagonal = (height: number, width: number) => {
+  return Math.sqrt(Math.pow(height, 2) + Math.pow(width, 2))
+}
 
 export default function Home() {
+  const ref = useRef(null)
+
+  const [height, setHeight] = useState(0)
+  const [width, setWidth] = useState(0)
+
+  useLayoutEffect(() => {
+    setHeight(ref.current.clientHeight)
+    setWidth(ref.current.clientWidth)
+  }, [])
+
   return (
     <>
       <Head>
@@ -9,7 +26,27 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>Hi Yann</main>
+      <main className="h-full z-0">
+        <div className="relative h-screen overflow-hidden" ref={ref}>
+          <div
+            style={{
+              height: `${getDiagonal(height, width)}px`,
+              width: `${getDiagonal(height, width)}px`,
+            }}
+            className="z-0 absolute top-1/2 left-1/2 bg-[conic-gradient(var(--tw-gradient-stops))] from-green-700 via-green-200/50 to-white duration-500 -translate-x-1/2 -translate-y-1/2 rotate"
+          />
+          <div className="relative z-10 flex h-full w-full">
+            <div className="w-1/2 h-full flex items-center">
+              <h1 className="mx-auto">
+                <span className="text-green-900 font-bold">Hey</span>
+                <br />
+                <span className="text-white">i&apos;m yann</span>
+              </h1>
+            </div>
+          </div>
+        </div>
+        <div className="h-screen">ada</div>
+      </main>
     </>
   )
 }

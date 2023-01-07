@@ -34,10 +34,17 @@ export default function Home() {
       </Head>
       {/* {!isClient ? null : ( */}
       <main className="z-0 h-full">
-        <FirstSection />
-        <SecondSectionContainer ref={section2Ref}>
-          {isSection2Visible && <SecondSection />}
-        </SecondSectionContainer>
+        <div className="h-screen snap-y snap-mandatory overflow-scroll">
+          <FirstSection />
+          <SecondSectionContainer ref={section2Ref}>
+            {isSection2Visible && <SecondSection />}
+          </SecondSectionContainer>
+          <div className="h-screen snap-center snap-always overflow-scroll">
+            {/* Everything else which should scroll normally */}
+            <div className="h-screen">End of scroll snap</div>
+            <div className="h-screen">test</div>
+          </div>
+        </div>
       </main>
       {/* )} */}
     </>

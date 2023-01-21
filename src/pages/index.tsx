@@ -1,24 +1,15 @@
+import { Canvas } from "@react-three/fiber";
 import Head from "next/head";
-import { useEffect, useRef, useState } from "react";
+import { Suspense } from "react";
 
-import RotativeBackgroundWithDescription from "../components/homepage/section1";
-import WhatDoILike from "../components/homepage/whatDoILike";
-import useOnScreen from "../hooks/use-on-screen";
+import Controls from "../components/three/OrbitControls";
+import Box from "../components/three/box";
+import Draggable from "../components/three/draggable";
+import Floor from "../components/three/floor";
+import LightBulb from "../components/three/light/LightBulb";
+import Sphere from "../components/three/sphere";
 
 export default function Home() {
-  // What do I like
-  const {
-    ref: beforeWhatDoILikeRef,
-    entry: isWhatDoILikeVisible,
-    isNextDomElVisible,
-  } = useOnScreen<HTMLDivElement>({ threshold: 0 });
-
-  const {
-    ref: beforeIndigoRef,
-    entry: isIndigoVisible,
-    isNextDomElVisible: isNextDomElVisible2,
-  } = useOnScreen<HTMLDivElement>({ threshold: 0 });
-
   return (
     <>
       <Head>
@@ -26,14 +17,29 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <main className="z-0 h-full">
-        <RotativeBackgroundWithDescription />
-        <div ref={beforeWhatDoILikeRef} className="h-screen bg-violet-200">
-          Violet
+        <div className="h-screen">
+          <Canvas
+            shadows={true}
+            camera={{
+              position: [-6, 7, 7],
+            }}
+          >
+            <ambientLight color="white" intensity={0.2} />
+            <LightBulb position={[0, 5, 0]} />
+            <Draggable>
+              <Suspense fallback={null}>
+                <Box position={[-2, 1, 0]} />
+              </Suspense>
+            </Draggable>
+            <Draggable>
+              <Suspense fallback={null}>
+                <Sphere position={[5, 3, 0]} />
+              </Suspense>
+            </Draggable>
+            <Controls.Orbit enableZoom={false} />
+            <Floor position={[0, -1, 0]} />
+          </Canvas>
         </div>
-        {isNextDomElVisible && <WhatDoILike ref={beforeIndigoRef} />}
-        {isNextDomElVisible2 && (
-          <div className="h-screen bg-indigo-200">Indigo</div>
-        )}
       </main>
     </>
   );

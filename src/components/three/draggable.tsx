@@ -8,7 +8,7 @@ extend({ DragControls });
 const Draggable: React.FC<React.PropsWithoutRef<GroupProps>> = (props) => {
   const groupRef = useRef<Group>(null);
   const controlsRef = useRef<DragControls>(null);
-  const [objects, setObjects] = useState<Object3D<Event>[]>([]);
+  const [objects, setObjects] = useState<Object3D[]>([]);
   const { camera, gl, scene } = useThree();
   useEffect(() => {
     if (groupRef.current) setObjects(groupRef.current.children);
@@ -20,20 +20,20 @@ const Draggable: React.FC<React.PropsWithoutRef<GroupProps>> = (props) => {
         (scene as any).orbitControls.enabled = false;
       });
       controlsRef.current.addEventListener("hoveroff", () => {
-        scene.orbitControls.enabled = true;
+        (scene as any).orbitControls.enabled = true;
       });
     }
     () => {
       if (controlsRef.current) {
         controlsRef.current.removeEventListener("hoveron", () => {
-          scene.orbitControls.enabled = false;
+          (scene as any).orbitControls.enabled = false;
         });
         controlsRef.current.removeEventListener("hoveroff", () => {
-          scene.orbitControls.enabled = true;
+          (scene as any).orbitControls.enabled = true;
         });
       }
     };
-  }, [objects]);
+  }, [objects, scene]);
 
   return (
     <group ref={groupRef}>

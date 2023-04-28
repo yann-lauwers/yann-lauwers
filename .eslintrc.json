@@ -1,3 +1,4 @@
 {
-  "extends": "next/core-web-vitals"
+  // Automatically flag env vars missing from turbo.json
+  "extends": ["turbo"]
 }

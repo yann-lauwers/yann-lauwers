@@ -1,4 +1,4 @@
-import sharedConfig from "tailwind-config/tailwind.config.js";
+import sharedConfig from "tailwind-config/index.js";
 
 module.exports = {
   presets: [sharedConfig],

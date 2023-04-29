@@ -1,5 +1,4 @@
-import { todos } from "../../../tables/users"
-import { db } from "../../../utils/drizzle"
+import { db, todos } from "database"
 
 export default async function handler(req, res) {
   if (req.method !== "POST") {
@@ -9,7 +8,7 @@ export default async function handler(req, res) {
     return
   }
 
-  const { text } = req.body
+const { text } = JSON.parse(req.body)
 
   if (!text) {
     res.status(400).json({

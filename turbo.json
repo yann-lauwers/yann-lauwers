@@ -5,12 +5,18 @@
       "cache": false,
       "persistent": true
     },
-    "build": {
-      "outputs": [".next/**", "!.next/cache/**"],
-      "env": ["DATABASE_URL"],
+    "lint": {},
+    "start": {
+      "env": ["DATABASE_URL", "NEXT_PUBLIC_TEST_ENV"],
       "dependsOn": ["^build"]
     },
-    "start": {}
-  },
-  "globalEnv": ["DATABASE_URL"]
+    "build": {
+      "outputs": [".next/**", "!.next/cache/**"],
+      "env": ["DATABASE_URL", "NEXT_PUBLIC_TEST_ENV"],
+      "dependsOn": ["^build"]
+    },
+    "clean": {
+      "cache": false
+    }
+  }
 }

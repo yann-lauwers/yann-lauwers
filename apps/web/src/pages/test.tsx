@@ -3,8 +3,6 @@
 import Head from "next/head";
 
 export default function Home() {
-  const a = process.env.NEXT_PUBLIC_DB_URL;
-
   const addTodo = async () => {
     const response = await fetch("/api/add", { method: "POST", body: JSON.stringify({ text: "test" }) });
 
@@ -34,7 +32,6 @@ export default function Home() {
         <br />
         <button onClick={async () => console.log(await addTodo())}>Add</button>
         <br />
-        {a}
       </div>
     </>
   );

@@ -1,7 +1,5 @@
 node_modules/
 build/
-tsconfig.json
-tsconfig.*.json
 *.d.ts
 .next
 **/pnpm-lock.yaml

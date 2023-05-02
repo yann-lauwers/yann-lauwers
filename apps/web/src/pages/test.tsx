@@ -1,6 +1,7 @@
 "use client";
 
 import Head from "next/head";
+import { Button } from "ui";
 
 export default function Home() {
   const addTodo = async () => {
@@ -27,11 +28,12 @@ export default function Home() {
       <Head>
         <title>Test</title>
       </Head>
-      <div className="z-0 h-full">
+      <div className="z-0 h-full bg-red-100">
         <button onClick={async () => console.log(await getTodos())}>Get</button>
         <br />
         <button onClick={async () => console.log(await addTodo())}>Add</button>
         <br />
+        <Button />
       </div>
     </>
   );

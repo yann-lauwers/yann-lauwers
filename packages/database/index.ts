@@ -1,8 +1,8 @@
 // Database connection
-export {db}from "./utils/drizzle"
+export { db } from "./utils/drizzle";
 
 // Tables
-export * from "./tables/index"
+export * from "./tables/index";
 
 // Interfaces
-export * from "./interfaces/index"
+export * from "./interfaces/index";

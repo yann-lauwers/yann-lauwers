@@ -2,12 +2,12 @@ import { Canvas } from "@react-three/fiber";
 import Head from "next/head";
 import { Suspense } from "react";
 
-import Box from "../components/three/box";
-import Draggable from "../components/three/draggable";
-import Floor from "../components/three/floor";
-import LightBulb from "../components/three/light/LightBulb";
-import Controls from "../components/three/orbit-controls";
-import Sphere from "../components/three/sphere";
+import Box from "~/components/three/box";
+import Draggable from "~/components/three/draggable";
+import LightBulb from "~/components/three/light/LightBulb";
+import Controls from "~/components/three/orbit-controls";
+import Sphere from "~/components/three/sphere";
+import Floor from "~/components/three/floor";
 
 export default function Home() {
   return (

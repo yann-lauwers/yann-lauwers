@@ -3,9 +3,12 @@
   "display": "React Library",
   "extends": "./base.json",
   "compilerOptions": {
-    "lib": ["ES2015"],
-    "module": "ESNext",
-    "target": "ES6",
-    "jsx": "react-jsx"
+    "lib": ["dom", "dom.iterable", "ES2020"],
+    "module": "commonjs",
+    "target": "es2020",
+    "jsx": "react-jsx",
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": ".",
+    "outDir": "./dist"
   }
 }

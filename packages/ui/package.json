@@ -4,12 +4,11 @@
   "sideEffects": [
     "**/*.css"
   ],
-  "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
-  "module": "./dist/index.mjs",
-  "files": [
-    "dist"
-  ],
+  "exports": {
+    ".": "./dist",
+    "./styles.css": "./dist/index.css"
+  },
   "license": "MIT",
   "scripts": {
     "build": "tsup",

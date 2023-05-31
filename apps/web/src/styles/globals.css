@@ -8,18 +8,10 @@
   body > div:first-child,
   div#__next,
   div#__next > div {
-    @apply min-h-full;
-  }
-  .rotate {
-    animation: rotation 5s infinite linear;
+    @apply h-full min-h-full;
   }
 
-  @keyframes rotation {
-    from {
-      transform: translate(-50%, -50%) rotate(-90deg);
-    }
-    to {
-      transform: translate(-50%, -50%) rotate(270deg);
-    }
+  :root {
+    --nav-height: 64px;
   }
 }

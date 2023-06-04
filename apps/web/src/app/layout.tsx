@@ -19,12 +19,11 @@ export default function RootLayout({ children }: PropsWithChildren) {
         </head>
         <body className={clsx("bg-background min-h-screen font-sans antialiased")}>
           <main className="h-full">
-            <div className="h-screen p-4">
-              <div className="h-[var(--nav-height)]">
-                <Link href="/">Homee</Link>
-              </div>
-              {children}
+            <div className="flex h-[var(--nav-height)] gap-4">
+              <Link href="/">Home</Link>
+              <Link href="/projects">Projects</Link>
             </div>
+            {children}
           </main>
         </body>
       </html>

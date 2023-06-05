@@ -13,14 +13,14 @@ const Page: FC = () => {
 
   return (
     <div>
-      <div className="mx-auto max-w-4xl px-8">
+      <div className="mx-auto mb-20 max-w-4xl px-8">
         <h3 className="mb-1 text-2xl font-medium">Description</h3>
-        <p className="mb-20 max-w-prose text-gray-700">{project.description}</p>
+        <p className="max-w-prose text-gray-700">{project.description}</p>
+        <p className="mt-4 text-gray-500">Made with {project.technologies.join(", ")}</p>
       </div>
       <div className="mx-auto max-w-6xl">
         <iframe style={{ height: "640px", width: "100%" }} src={project.url} title={project.title}></iframe>
-        <div className="mx-2 mt-2 flex justify-between">
-          <p>Made with {project.technologies.join(", ")}</p>
+        <div className="mx-2 mt-2 flex justify-end">
           <Link className="text-blue-500 underline" href={project.url}>
             {project.url}
           </Link>

@@ -7,11 +7,21 @@ const PROJECT_TYPES: ProjectType[] = ["external", "personal"];
 
 export const PROJECTS: { id: string; title: string; description: string; technologies: string[]; url: string; type: ProjectType }[] = [
   {
-    id: "pdf-merger",
-    title: "PDF merger",
-    description: "While at Embie, I had ...",
+    id: "game-of-life",
+    title: "Game of Life",
+    description:
+      "While at Embie, I had the opportunity to improve my skills in React and Next.js. I decided to improve to skills by creating a Game of Life. It taught me a lot about react's limitation in rendering and how to optimize it. I've had the opportunity to better understand the rendering cycle of React and its refs.",
     technologies: ["Next.js", "TailwindCSS"],
-    url: "https://carolinedebray.com/",
+    url: "https://game-of-life-pink.vercel.app/",
+    type: "personal",
+  },
+  {
+    id: "pdf-merge",
+    title: "PDF merge",
+    description:
+      "My first personal project while working at Embie was this PDF merge. The goal is to merge many PDF files into one. I learned a little bit about how PDF files work and their structure. It was a fun project to work on and I learned a lot about Next.js and TailwindCSS.",
+    technologies: ["Next.js", "TailwindCSS", "pdf-merger-js"],
+    url: "https://pdf-merge.vercel.app/",
     type: "personal",
   },
   {
@@ -46,7 +56,7 @@ const Page: FC = ({ params }: { params: { "project-type": ProjectType } }) => {
           <h2 className="text-2xl font-medium">{project.title}</h2>
           {/* TODO: create a thumbnail for this card -> ask on fiverr */}
           <div className="mt-2 flex h-40 items-center justify-center rounded-sm bg-red-50">{project.title}</div>
-          <p className="mb-2 mt-4 line-clamp-3 text-gray-700">{project.description}</p>
+          <p className="mb-2 mt-4 line-clamp-2 text-gray-700">{project.description}</p>
           <Link className="underline" href={`/projects/${project.type}/${project.id}`}>
             See more
           </Link>

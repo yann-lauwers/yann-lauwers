@@ -2,7 +2,7 @@
 import "./styles.css";
 
 // components
-export * from "./Button";
-export * from "./card";
+export * from "./button";
+export * from "./carde";
 
 export * from "./types";

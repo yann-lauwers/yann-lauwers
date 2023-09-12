@@ -3,6 +3,6 @@ import "./styles.css";
 
 // components
 export * from "./button";
-export * from "./carde";
+export * from "./card";
 
 export * from "./types";

@@ -1,7 +1,7 @@
 import { FC } from "react";
 
 const Page: FC = () => {
-  return <div>a</div>;
+  return <div>Career</div>;
 };
 
 export default Page;

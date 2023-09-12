@@ -7,17 +7,18 @@ const buttonVariants = cva("inline-flex justify-center", {
   variants: {
     variant: {
       default: "w-full md:w-fit rounded-2xl bg-primary text-white disabled:bg-primary/60 hover:bg-primary/90",
-      underline: "underline text-primary",
-      ghost: "text-primary",
+      navbar: "font-semibold text-gray-700 transition-colors hover:text-blue-700",
     },
     weight: {
-      default: "font-semibold",
+      default: "font-normal",
       medium: "font-medium",
+      "semi-bold": "font-semibold",
       bold: "font-bold",
     },
     size: {
-      none: "",
       default: "px-4 py-3",
+      none: "",
+      navbar: "px-4 py-2",
     },
   },
   defaultVariants: {

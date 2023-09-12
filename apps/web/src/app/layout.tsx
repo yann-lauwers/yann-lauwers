@@ -2,14 +2,14 @@ import Link, { LinkProps } from "next/link";
 import "../styles/globals.css";
 import "ui/styles.css";
 
-import { PropsWithChildren } from "react";
+import { CSSProperties, PropsWithChildren } from "react";
 import clsx from "clsx";
 import { Button } from "~/components/buttons";
 import Image from "next/image";
 
 const NavbarLink = ({ children, className, ...props }: PropsWithChildren<LinkProps & { className?: string }>) => {
   return (
-    <Button className={clsx("px-1 py-2 font-semibold text-gray-700 transition-colors hover:text-blue-700")} asChild>
+    <Button variant="navbar" size="navbar" weight="semi-bold" asChild>
       <Link {...props}>{children}</Link>
     </Button>
   );
@@ -26,11 +26,14 @@ export default function RootLayout({ children }: PropsWithChildren) {
           <title>Yann Lauwers</title>
           {/* <meta name="viewport" content="width=device-width, initial-scale=1" /> */}
         </head>
-        <body className={clsx("bg-background min-h-screen font-sans antialiased")}>
+        <body
+          style={{ "--navmargin": "1.5rem", "--navheight": "2.5rem" } as CSSProperties}
+          className={clsx("bg-background min-h-screen font-sans antialiased")}
+        >
           <main className="h-full">
-            <div className="mx-auto mt-6 grid max-w-5xl">
-              <div className="flex items-center gap-4">
-                <Button asChild className="flex-1">
+            <div className="fixed inset-x-0 top-0 mx-auto max-w-5xl  pt-[var(--navmargin)]">
+              <div className="flex h-[var(--navheight)] items-center  gap-4">
+                <Button asChild unstyled className="flex-1">
                   <Link href="/">
                     <Image
                       src="https://picsum.photos/64/64"
@@ -41,8 +44,8 @@ export default function RootLayout({ children }: PropsWithChildren) {
                     />
                   </Link>
                 </Button>
-                <div className="mx-auto w-max flex-1">
-                  <div className="flex rounded-3xl px-2 shadow-sm">
+                <div className="flex-1">
+                  <div className="mx-auto flex w-max rounded-3xl bg-white px-2 shadow-sm">
                     <NavbarLink href="/about">About</NavbarLink>
                     <NavbarLink href="/career">Career</NavbarLink>
                     <NavbarLink href="/projects">Projects</NavbarLink>
@@ -52,7 +55,10 @@ export default function RootLayout({ children }: PropsWithChildren) {
                 <div className="invisible flex-1"></div>
               </div>
             </div>
-            <div>{children}</div>
+            <div className="flex h-full items-center justify-center py-[calc(var(--navmargin)_+_var(--navheight))]">
+              <p>This website is under construction</p>
+            </div>
+            {/* <div>{children}</div> */}
           </main>
         </body>
       </html>

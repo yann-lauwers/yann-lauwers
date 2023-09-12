@@ -1,4 +1,4 @@
-import { Button } from "./Button";
+import { Button } from "./button";
 
 export const Card = ({ title, cta, href }: { title: string; cta: string; href: string }) => {
   return (

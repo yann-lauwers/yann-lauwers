@@ -1,20 +1,20 @@
-import { db, todos } from "database"
+import { db, todos } from "database";
 
 export default async function handler(req, res) {
   if (req.method !== "POST") {
     res.status(403).json({
       message: "Only supports POST method!",
-    })
-    return
+    });
+    return;
   }
 
-const { text } = JSON.parse(req.body)
+  const { text } = JSON.parse(req.body);
 
   if (!text) {
     res.status(400).json({
       message: "Fields cannot be empty",
-    })
-    return
+    });
+    return;
   }
 
   // Inserting tasks into ‘todos’ table
@@ -26,12 +26,12 @@ const { text } = JSON.parse(req.body)
         text: text,
       })
       .returning()
-      .get()
+      .get();
 
-    res.status(201).json({ todo })
+    res.status(201).json({ todo });
   } catch (err) {
     // Handle query error
-    console.error(err)
-    res.status(500).send("Internal Server Error")
+    console.error(err);
+    res.status(500).send("Internal Server Error");
   }
 }

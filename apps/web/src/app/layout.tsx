@@ -32,8 +32,8 @@ export default function RootLayout({ children }: PropsWithChildren) {
         >
           <main className="h-full">
             <div className="fixed inset-x-0 top-0 mx-auto max-w-5xl  pt-[var(--navmargin)]">
-              <div className="flex h-[var(--navheight)] items-center  gap-4">
-                <Button asChild unstyled className="flex-1">
+              <div className="flex h-[var(--navheight)] items-center gap-4 p-4">
+                <Button asChild unstyled className="hidden flex-1 sm:block">
                   <Link href="/">
                     <Image
                       src="https://picsum.photos/64/64"
@@ -52,7 +52,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
                     <NavbarLink href="/uses">Uses</NavbarLink>
                   </div>
                 </div>
-                <div className="invisible flex-1"></div>
+                <div className="invisible hidden flex-1 sm:block"></div>
               </div>
             </div>
             <div className="flex h-full items-center justify-center py-[calc(var(--navmargin)_+_var(--navheight))]">

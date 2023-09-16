@@ -6,6 +6,7 @@ import { CSSProperties, PropsWithChildren } from "react";
 import clsx from "clsx";
 import { Button } from "~/components/buttons";
 import Image from "next/image";
+import { Analytics } from "@vercel/analytics/react";
 
 const NavbarLink = ({ children, className, ...props }: PropsWithChildren<LinkProps & { className?: string }>) => {
   return (
@@ -59,6 +60,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
               <p>This website is under construction</p>
             </div>
             {/* <div>{children}</div> */}
+            <Analytics />
           </main>
         </body>
       </html>

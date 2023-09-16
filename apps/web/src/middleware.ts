@@ -9,9 +9,7 @@ export function middleware(request: NextRequest) {
   const course = courses.find((course) => course.slug === courseFromPathname);
 
   if (!course) return;
-  // NextResponse.redirect(new URL("/", request.url));
 
-  // return;
   return NextResponse.redirect(new URL(course.redirectLink));
 }
 

@@ -20,7 +20,7 @@
     "apps/*",
     "packages/*"
   ],
-  "packageManager": "pnpm@8.3.1",
+  "packageManager": "pnpm@8.6.9",
   "engines": {
     "node": ">=18 <=20",
     "pnpm": ">=8.0.0"
@@ -29,12 +29,12 @@
     "extends": "./.eslintrc.json"
   },
   "devDependencies": {
-    "dotenv-cli": "^7.2.1",
+    "dotenv-cli": "^7.3.0",
     "eslint": "^7.32.0",
     "eslint-config-custom": "workspace:*",
-    "prettier": "^2.8.2",
+    "prettier": "^2.8.8",
     "prettier-config": "workspace:*",
-    "prettier-plugin-tailwindcss": "^0.1.11",
+    "prettier-plugin-tailwindcss": "^0.1.13",
     "turbo": "latest"
   }
 }

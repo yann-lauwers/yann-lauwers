@@ -8,4 +8,3 @@ export const courses = [
     redirectLink: "https://www.edx.org/learn/computer-science/harvard-university-cs50-s-introduction-to-computer-science",
   },
 ];
-export const matcher = ["sn", "jj", "lewagon", "cs-50"];

@@ -17,6 +17,13 @@ const NavbarLink = ({ children, className, ...props }: PropsWithChildren<LinkPro
 };
 
 export default function RootLayout({ children }: PropsWithChildren) {
+  const getTodos = async () => {
+    const response = await fetch("http://localhost:3000/api/todos/get");
+    const todos = await response.json();
+    console.log(todos);
+  };
+  getTodos();
+
   return (
     <>
       <html

@@ -1,5 +1,5 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-import { Todo, db, todos } from "database";
+import { Todo, db, todos } from "@lauwersoo/database";
 import type { NextApiResponse } from "next";
 import { NextRequest, NextResponse } from "next/server";
 

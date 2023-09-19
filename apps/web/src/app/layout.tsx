@@ -1,6 +1,6 @@
 import Link, { LinkProps } from "next/link";
-import "../styles/globals.css";
-// import "ui/styles.css";
+import "./globals.css";
+// import "@lauwersoo/ui/index.css";
 
 import { CSSProperties, PropsWithChildren } from "react";
 import clsx from "clsx";

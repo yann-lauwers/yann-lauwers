@@ -1,21 +1,11 @@
 {
-  "extends": "tsconfig/nextjs.json",
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    ".next/types/**/*.ts"
-  ],
-  "exclude": [
-    "node_modules"
-  ],
+  "extends": "@lauwersoo/tsconfig/nextjs.json",
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "exclude": ["node_modules"],
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "~/*": [
-        "src/*",
-        "public/static/images/*"
-      ]
+      "~/*": ["src/*", "public/static/images/*"]
     },
     "target": "es5",
     "plugins": [

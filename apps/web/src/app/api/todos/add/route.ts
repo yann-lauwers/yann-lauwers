@@ -1,4 +1,4 @@
-import { db, todos } from "database";
+import { db, todos } from "@lauwersoo/database";
 
 export async function POST(req, res) {
   if (req.method !== "POST") {

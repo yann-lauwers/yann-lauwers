@@ -29,12 +29,12 @@
     "extends": "./.eslintrc.json"
   },
   "devDependencies": {
+    "@lauwersoo/eslint-config-custom": "workspace:*",
+    "@lauwersoo/prettier-config": "workspace:*",
     "dotenv-cli": "^7.3.0",
-    "eslint": "^7.32.0",
-    "eslint-config-custom": "workspace:*",
-    "prettier": "^2.8.8",
-    "prettier-config": "workspace:*",
-    "prettier-plugin-tailwindcss": "^0.1.13",
+    "eslint": "^8.48.0",
+    "prettier": "^3.0.3",
+    "prettier-plugin-tailwindcss": "^0.5.3",
     "turbo": "latest"
   }
 }

@@ -1,5 +1,1 @@
-import sharedConfig from "tailwind-config/index.js";
-
-module.exports = {
-  presets: [sharedConfig],
-};
+module.exports = require("@lauwersoo/configs/tailwind/tailwind.config");

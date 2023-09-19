@@ -1,5 +1,5 @@
 {
-  "name": "database",
+  "name": "@lauwersoo/database",
   "version": "0.0.0",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -15,12 +15,12 @@
     "drizzle-orm": "^0.28.6"
   },
   "devDependencies": {
+    "@lauwersoo/eslint-config-custom": "workspace:*",
+    "@lauwersoo/tsconfig": "workspace:*",
     "@types/node": "^12.12.21",
     "drizzle-kit": "^0.19.13",
     "eslint": "^7.32.0",
-    "eslint-config-custom": "workspace:*",
     "nodemon": "^2.0.22",
-    "tsconfig": "workspace:*",
     "typescript": "^5.0.4"
   }
 }
